@@ -1,0 +1,62 @@
+! Color scheme
+#define BLACK_D #232323
+#define BLACK_L #494949
+
+#define GREY_D #7F7F7F
+#define GREY_L #AAAAAA
+
+#define WHITE_D #CCCCCC
+#define WHITE_L #EFEFEF
+
+#define ORANGE_D #CC6E13
+#define ORANGE_L #CC8743
+
+#define ORANGERED_D #CC3F13
+#define ORANGERED_L #CC6443
+
+#define RED_D #CC131E
+#define RED_L #CC4349
+
+#define FUSCHIA_D #CC13C0
+#define FUSCHIA_L #CC43C2
+
+#define PURPLE_D #7C19CC
+#define PURPLE_L #9349CC
+
+#define FG #DFDFDF
+#define BG #131313
+
+*saveLines: 8192
+*font: xft:TerminessTTF Nerd Font:size=9
+*letterSpace: 0
+*lineSpace: 0
+
+! special
+*.foreground: FG
+*.background: BG
+
+*.color0: BLACK_D
+*.color8: BLACK_L
+*.color1: ORANGE_D
+*.color9: ORANGE_L
+*.color2: ORANGERED_D
+*.color10: ORANGERED_L
+*.color3: RED_D
+*.color11: RED_L
+*.color4: FUSCHIA_D
+*.color12: FUSCHIA_L
+*.color5: PURPLE_D
+*.color13: PURPLE_L
+*.color6: GREY_D
+*.color14: GREY_L
+*.color7: WHITE_D
+*.color15: WHITE_L
+
+! urxvt config
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,matcher,font-size,vtwheel,keyboard-select,clipboard
+URxvt.termName: rxvt-unicode-256color
+
+! rofi config
+rofi.color-normal:  BG,FG,RED_D,ORANGE_D,FG
+rofi.color-window:  BG,RED_L
