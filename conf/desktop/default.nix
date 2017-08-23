@@ -32,6 +32,7 @@
         desktopManager.xterm.enable = false;
         windowManager.i3.enable = true;
         windowManager.i3.package = pkgs.i3-gaps;
+        windowManager.i3.configFile = "${./i3conf}";
         windowManager.default = "i3";
 
         # Drivers
@@ -64,7 +65,6 @@
     #    vSync = "opengl-mswc";
     #};
 
-    services.urxvtd.enable = true;
     services.mpd.enable = true;
     services.tlp.enable = true;
 
@@ -78,6 +78,7 @@
         polybar
         rofi
         dunst
+        termite
         arc-theme
         paper-icon-theme
         xorg.xbacklight

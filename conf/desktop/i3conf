@@ -1,0 +1,111 @@
+# Windows key
+set $mod Mod4
+
+# Font
+font pango:Terminess Powerline 8
+
+# Window border style
+new_window pixel 0
+gaps inner 8
+
+# class                 border  backgr. text    indicator   Something
+client.focused          #FF1D04 #FF1D04 #FF1D04 #FF1D04     #FF1D04
+client.focused_inactive #F07B6C #F07B6C #F07B6C #F07B6C     #F07B6C
+client.unfocused        #6A3D37 #6A3D37 #6A3D37 #6A3D37     #6A3D37
+client.urgent           #900000 #900000 #900000 #900000     #900000
+client.placeholder      #F07B6C #F07B6C #F07B6C #F07B6C     #F07B6C
+
+hide_edge_borders both
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Terminal
+bindsym $mod+Return       exec termite
+bindsym $mod+Shift+Return exec i3-sensible-terminal -e tmux attach-session
+
+# Kill window
+bindsym $mod+Shift+q kill
+
+# Dmenu
+bindsym $mod+d exec --no-startup-id rofi -show run -font "Terminess Powerline 9"
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split
+bindsym $mod+v split v
+
+# Fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Change layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus
+bindsym $mod+space focus mode_toggle
+
+# Focus on parent
+bindsym $mod+a focus parent
+
+# Workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+#input "2:7:SynPS\/2_Synaptics_TouchPad" {
+#    pointer_accel 0
+#}
+
+#output "*" background $HOME/.config/i3/background.png fill
+
+#bar {
+#    i3bar_command ~/.config/i3/bar.py | lemonbar -f"Terminess Powerline:size=9" -f"Stlarch:size=9" | bash
+#}
+
+# Autostart programs
+exec jack_control start
+exec xrdb $HOME/.Xresources
+exec feh --bg-scale /etc/nixos/background.jpg
+exec dunst

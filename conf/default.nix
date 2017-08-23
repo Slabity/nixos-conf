@@ -24,19 +24,6 @@ with builtins; with pkgs.lib; {
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
-    # Create an actual user.
-    users.defaultUserShell = pkgs.zsh;
-    users.extraUsers.slabity = {
-        isNormalUser = true;
-        extraGroups = [
-            "wheel"
-            "networkmanager"
-            "docker"
-            "libvirtd"
-        ];
-        uid = 1000;
-    };
-
     zramSwap.enable = true;
 
     hardware.opengl.driSupport32Bit = true;

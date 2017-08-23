@@ -3,6 +3,7 @@
 {
     imports = [
           ./sys/hardware-configuration.nix
+          ./sys/accounts.nix
           ./conf
       ];
 
