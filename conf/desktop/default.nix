@@ -1,7 +1,10 @@
 { config, pkgs, expr, ... }:
 
 {
-    imports = [ ./pulseaudio.nix ];
+    imports = [
+        ./sway.nix
+        ./pulseaudio.nix
+    ];
 
     hardware.opengl.driSupport = true;
     hardware.opengl.extraPackages = with pkgs; [
@@ -33,7 +36,9 @@
         windowManager.i3.enable = true;
         windowManager.i3.package = pkgs.i3-gaps;
         windowManager.i3.configFile = "${./i3conf}";
-        windowManager.default = "i3";
+        windowManager.sway.enable = true;
+        windowManager.sway.configFile = "${./i3conf}";
+        windowManager.default = "sway";
 
         # Drivers
         videoDrivers = [ "ati" "modesetting" ];
