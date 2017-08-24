@@ -38,7 +38,7 @@
         windowManager.i3.configFile = "${./i3conf}";
         windowManager.sway.enable = true;
         windowManager.sway.configFile = "${./i3conf}";
-        windowManager.default = "sway";
+        windowManager.default = "i3";
 
         # Drivers
         videoDrivers = [ "ati" "modesetting" ];

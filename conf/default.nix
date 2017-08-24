@@ -5,6 +5,7 @@ with builtins; with pkgs.lib; {
     imports = [
         ./bootloader.nix
         ./desktop
+        ./prog
     ];
 
     system.stateVersion = "17.09";
@@ -30,9 +31,6 @@ with builtins; with pkgs.lib; {
 
     # List of packages installed in system profile.
     environment.systemPackages = with pkgs; [
-        # Version control
-        git mercurial subversion
-
         # Archiving
         unzip zip unrar
 
@@ -46,20 +44,16 @@ with builtins; with pkgs.lib; {
 
         gdb
         pkgconfig
-        gcc6
         valgrind
-        go
-        ghc                 # Haskell compiler
-        python36Full
-        #rustChannels.nightly.rust
-        #rustChannels.nightly.rust-src
         rustracer
 
         # Custom packages
         texlive.combined.scheme-full
+
+        zsh-completions
+        nix-zsh-completions
     ];
 
-    services.emacs.enable = true;
     programs.tmux.enable = true;
     programs.tmux.keyMode = "vi";
 
@@ -68,13 +62,20 @@ with builtins; with pkgs.lib; {
 
     programs.zsh = {
         enable = true;
+        enableCompletion = true;
+        enableAutosuggestions = true;
         ohMyZsh = {
             enable = true;
             plugins = [
                 "common-aliases"
                 "compleat"
+                "dirhistory"
+                "encode64"
+                "fasd"
                 "git"
                 "git-extras"
+                "nix"
+                "per-directory-history"
                 "sudo"
                 "systemd"
                 "tmux"
