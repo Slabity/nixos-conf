@@ -4,6 +4,7 @@ with builtins; with pkgs.lib; {
 
     imports = [
         ./bootloader.nix
+        ./nixpkgs
         ./desktop
         ./prog
     ];

@@ -8,6 +8,7 @@ in
     hardware.pulseaudio = {
         enable = true;
         package = pulse;
+	support32Bit = true;
     };
 
     systemd.user.services = {

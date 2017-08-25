@@ -7,8 +7,6 @@ with builtins; with pkgs.lib; {
 
     # Compilers and interpreters
     gcc6 go ghc python36Full nodejs ruby octave
-    #rustChannels.nightly.rust
-    #rustChannels.nightly.rust-src
   ];
 
   programs.java.enable = true;

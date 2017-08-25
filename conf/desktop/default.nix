@@ -1,12 +1,13 @@
-{ config, pkgs, expr, ... }:
+{ config, pkgs, expr, sys, ... }:
 
-{
+with builtins; with pkgs.lib; {
     imports = [
         ./sway.nix
         ./pulseaudio.nix
     ];
 
     hardware.opengl.driSupport = true;
+    hardware.opengl.driSupport32Bit = true;
     hardware.opengl.extraPackages = with pkgs; [
         vaapiIntel      # Video Accel API by Intel
         libvdpau-va-gl  # VDPAU driver using VAAPI
@@ -60,21 +61,21 @@
         desktopManager.default = "custom";
     };
 
-    #services.compton = {
-    #    enable = true;
-    #    fade = true;
-    #    inactiveOpacity = "0.8";
-    #    shadow = true;
-    #    fadeDelta = 3;
-    #    backend = "glx";
-    #    vSync = "opengl-mswc";
-    #};
+    services.compton = {
+        enable = true;
+        fade = true;
+        inactiveOpacity = "0.8";
+        shadow = true;
+        fadeDelta = 3;
+        backend = "glx";
+        vSync = "opengl-mswc";
+    };
 
     services.mpd.enable = true;
     services.tlp.enable = true;
 
     environment.systemPackages = with pkgs; [
-        firefox
+        latest.firefox-nightly-bin
         krita
         gimp
         steam
