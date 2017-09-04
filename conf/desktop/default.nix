@@ -42,18 +42,21 @@ with builtins; with pkgs.lib; {
         windowManager.default = "i3";
 
         # Drivers
-        videoDrivers = [ "ati" "modesetting" ];
+        videoDrivers = [ "amdgpu" "modesetting" ];
         useGlamor = true;
 
         desktopManager.session = [
             {
                 name = "custom";
                 start = ''
+                    # Set background
+                    ${pkgs.feh}/bin/feh --bg-scale ${./background.jpg}
+
                     # Load custom Xresources
                     ${pkgs.xlibs.xrdb}/bin/xrdb -load ${./Xresources}
 
                     # Start notifications
-                    ${pkgs.dunst}/bin/dunst
+                    ${pkgs.dunst}/bin/dunst &
                 '';
             }
         ];
@@ -68,26 +71,29 @@ with builtins; with pkgs.lib; {
         shadow = true;
         fadeDelta = 3;
         backend = "glx";
-        vSync = "opengl-mswc";
+        vSync = "drm";
+    };
+
+    services.redshift = {
+        enable = true;
+        latitude = "43";
+        longitude = "-71";
+        brightness.day = "1";
+        brightness.night = "0.5";
+        temperature.day = 6500;
+        temperature.night = 100;
     };
 
     services.mpd.enable = true;
     services.tlp.enable = true;
 
     environment.systemPackages = with pkgs; [
-        latest.firefox-nightly-bin
-        krita
-        gimp
-        steam
-        patchage
-        ardour
         polybar
         rofi
-        dunst
         termite
-        arc-theme
-        paper-icon-theme
-        xorg.xbacklight
+        numix-icon-theme-square
+        numix-gtk-theme
+        conky
     ];
 
     fonts.enableDefaultFonts = true;
@@ -98,7 +104,7 @@ with builtins; with pkgs.lib; {
     ];
 
     fonts.fontconfig = {
-        defaultFonts.monospace = [ "TerminessTTF Nerd Font" ];
+        defaultFonts.monospace = [ "Terminess Powerline" ];
         ultimate.enable = false;
     };
 

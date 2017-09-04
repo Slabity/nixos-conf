@@ -6,7 +6,7 @@ with builtins; with pkgs.lib; {
     git mercurial subversion
 
     # Compilers and interpreters
-    gcc6 go ghc python36Full nodejs ruby octave
+    gcc6 go python36Full nodejs ruby octave
   ];
 
   programs.java.enable = true;

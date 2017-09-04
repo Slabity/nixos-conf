@@ -6,7 +6,7 @@ stdenv.mkDerivation {
         owner = "bhilburn";
         repo = "powerlevel9k";
         rev = "master";
-        sha256 = "1pwq32ig5cdn41c1swdfbp2lv2iyl15gz3c6al8p9jihs53d503c";
+        sha256 = "10962xypbcnr8jy8g1p0yh065zrqsck9wj7jzsd54dmll5yh08p3";
     };
 
     installPhase = ''

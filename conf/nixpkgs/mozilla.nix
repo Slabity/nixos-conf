@@ -2,10 +2,10 @@
 
 let
     mozillaPkgsDir = (import <nixpkgs>{config={};}).fetchFromGitHub {
-        owner = "slabity";
+        owner = "mozilla";
         repo = "nixpkgs-mozilla";
         rev = "HEAD";
-        sha256 = "0idhapf4c41mj8lvrca2x4dfw8v68iw98vzd9hsdrd6b474j32pj";
+        sha256 = "1shz56l19kgk05p2xvhb7jg1whhfjix6njx1q4rvrc5p1lvyvizd";
         fetchSubmodules = true;
     };
 in
