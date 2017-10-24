@@ -5,9 +5,9 @@
 
     users = {
         defaultUserShell = pkgs.zsh;
-        mutableUsers = false;
+        mutableUsers = true;
 
-        extraUsers.slabity = {
+        extraUsers.tslabinski = {
             uid = 1000;
             isNormalUser = true;
 
@@ -18,7 +18,7 @@
                 "libvirtd"
             ];
 
-            passwordFile = "${./passwd}";
+            initialPassword = "temp";
         };
     };
 }
