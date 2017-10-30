@@ -27,7 +27,7 @@
 #define BG #131313
 
 *saveLines: 8192
-*font: xft:TerminessTTF Nerd Font:size=9
+*font: Terminess Powerline 9
 *letterSpace: 0
 *lineSpace: 0
 

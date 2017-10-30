@@ -28,7 +28,7 @@ with builtins; with pkgs.lib; {
         displayManager.lightdm.enable = true;
         displayManager.lightdm.autoLogin = {
             enable = true;
-            user = "slabity";
+            user = "tslabinski";
         };
         displayManager.lightdm.greeter.enable = false;
 
@@ -61,6 +61,8 @@ with builtins; with pkgs.lib; {
             }
         ];
 
+        xrandrHeads = [ "HDMI-1" "HDMI-3" ];
+
         desktopManager.default = "custom";
     };
 
@@ -81,7 +83,7 @@ with builtins; with pkgs.lib; {
         brightness.day = "1";
         brightness.night = "0.5";
         temperature.day = 6500;
-        temperature.night = 100;
+        temperature.night = 3200;
     };
 
     services.mpd.enable = true;
@@ -106,7 +108,22 @@ with builtins; with pkgs.lib; {
     fonts.fontconfig = {
         defaultFonts.monospace = [ "Terminess Powerline" ];
         ultimate.enable = false;
-    };
+  };
 
-    nixpkgs.config.firefox.enableAdobeFlash = true;
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    gutenprint
+    gutenprintBin
+    cupsBjnp
+    mfcj470dw-cupswrapper
+    mfcj6510dw-cupswrapper
+    mfcl2700dncupswrapper
+  ];
+
+  services.avahi.enable = true;
+
+  services.synergy.server = {
+    enable = true;
+    address = "10.42.0.163:24800";
+  };
 }
