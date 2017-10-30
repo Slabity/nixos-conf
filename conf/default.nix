@@ -6,7 +6,6 @@ with builtins; with pkgs.lib; {
       ./bootloader.nix
       ./printing.nix
       ./zsh
-      ./nixpkgs
       ./desktop
       ./prog
     ];

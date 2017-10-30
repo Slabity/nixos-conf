@@ -19,7 +19,6 @@ with builtins; with pkgs.lib; {
         "per-directory-history"
         "sudo"
         "systemd"
-        "tmux"
         "vi-mode"
         "wd"
       ];
@@ -32,4 +31,8 @@ with builtins; with pkgs.lib; {
     zsh-completions
     nix-zsh-completions
   ];
+
+  environment.shellAliases = {
+    edit = "$EDITOR -cnw";
+  };
 }
