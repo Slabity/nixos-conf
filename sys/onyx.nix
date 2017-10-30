@@ -10,5 +10,4 @@ rec {
   };
 
   printing = true;
-  tmux = false;
 }
