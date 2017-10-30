@@ -2,7 +2,6 @@
 
 with builtins; with pkgs.lib; {
     imports = [
-        ./sway.nix
         ./pulseaudio.nix
     ];
 
@@ -37,8 +36,6 @@ with builtins; with pkgs.lib; {
         windowManager.i3.enable = true;
         windowManager.i3.package = pkgs.i3-gaps;
         windowManager.i3.configFile = "${./i3conf}";
-        windowManager.sway.enable = true;
-        windowManager.sway.configFile = "${./i3conf}";
         windowManager.default = "i3";
 
         # Drivers
