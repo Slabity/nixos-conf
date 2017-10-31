@@ -39,6 +39,9 @@ with builtins; with pkgs.lib; {
         # Monitoring
         pciutils usbutils atop
         linuxPackages.netatop # Extends atop to add networking
+
+        # General utilities
+        file bc
     ];
 
     virtualisation.libvirtd.enable = true;

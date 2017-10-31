@@ -80,7 +80,7 @@ with builtins; with pkgs.lib; {
         brightness.day = "1";
         brightness.night = "0.5";
         temperature.day = 6500;
-        temperature.night = 3200;
+        temperature.night = 3500;
     };
 
     services.mpd.enable = true;
@@ -107,20 +107,5 @@ with builtins; with pkgs.lib; {
         ultimate.enable = false;
   };
 
-  services.printing.enable = true;
-  services.printing.drivers = with pkgs; [
-    gutenprint
-    gutenprintBin
-    cupsBjnp
-    mfcj470dw-cupswrapper
-    mfcj6510dw-cupswrapper
-    mfcl2700dncupswrapper
-  ];
-
   services.avahi.enable = true;
-
-  services.synergy.server = {
-    enable = true;
-    address = "10.42.0.163:24800";
-  };
 }

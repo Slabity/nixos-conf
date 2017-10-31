@@ -24,7 +24,15 @@ with builtins; with pkgs.lib; {
       ];
       theme = "../../../../../..${expr.powerlevel9k}/powerlevel9k/powerlevel9k";
     };
-    interactiveShellInit = readFile ./zsh_init.zsh;
+    interactiveShellInit = ''
+      ${readFile ./powerlevel9k_init.zsh};
+
+      edit() {
+          emacsclient -cnw $@
+      }
+
+      compinit
+      '';
   };
 
   environment.systemPackages = with pkgs; [
@@ -32,7 +40,8 @@ with builtins; with pkgs.lib; {
     nix-zsh-completions
   ];
 
-  environment.shellAliases = {
-    edit = "$EDITOR -cnw";
+  environment.variables = {
+    EDITOR = "edit";
+    VISUAL = "edit";
   };
 }
