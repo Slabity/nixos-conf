@@ -28,7 +28,7 @@ with builtins; with pkgs.lib; {
       ${readFile ./powerlevel9k_init.zsh};
 
       edit() {
-          emacsclient -cnw $@
+          emacsclient -cnw $@;
       }
 
       nsh() {
