@@ -34,11 +34,12 @@ with builtins; with pkgs.lib; {
 
         # Disk and FS
         gptfdisk parted btrfs-progs exfat dosfstools ecryptfs squashfsTools
-        linuxPackages.zfs
+        linuxPackages.zfs tree
 
         # Monitoring
         pciutils usbutils atop
         linuxPackages.netatop # Extends atop to add networking
+        pstree
 
         # General utilities
         file bc

@@ -31,6 +31,10 @@ with builtins; with pkgs.lib; {
           emacsclient -cnw $@
       }
 
+      nsh() {
+          nix-shell --command "exec zsh" $@
+      }
+
       compinit
       '';
   };
