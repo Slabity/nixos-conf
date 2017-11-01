@@ -27,7 +27,7 @@ with builtins; with pkgs.lib; {
         displayManager.lightdm.enable = true;
         displayManager.lightdm.autoLogin = {
             enable = true;
-            user = optionalString (sys.user != null) "slabity";
+            user = if (sys.user != null) then sys.user else "slabity";
         };
         displayManager.lightdm.greeter.enable = false;
 

@@ -43,6 +43,8 @@ with builtins; with pkgs.lib; {
 
         # General utilities
         file bc
+
+        nix-repl
     ];
 
     virtualisation.libvirtd.enable = true;

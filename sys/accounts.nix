@@ -1,7 +1,7 @@
 { config, pkgs, expr, sys, ... }:
 
 let
-  user = if sys.user == null then "slabity" else sys.user;
+  user = if (sys.user != null) then sys.user else "slabity";
 in
 {
     security.sudo.enable = true;
