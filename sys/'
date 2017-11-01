@@ -10,7 +10,7 @@ in
         defaultUserShell = pkgs.zsh;
         mutableUsers = true;
 
-        extraUsers.${user} = {
+        extraUsers."$(user)" = {
             uid = 1000;
             isNormalUser = true;
 

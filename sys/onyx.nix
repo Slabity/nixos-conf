@@ -3,6 +3,8 @@ rec {
   efiPath = "/boot";
   timeZone = "America/New_York";
 
+  user = "tslabinski";
+
   desktop = {
     enable = true;
     laptop = false;
