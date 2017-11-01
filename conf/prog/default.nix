@@ -7,6 +7,9 @@ with builtins; with pkgs.lib; {
 
     # Compilers and interpreters
     gcc6 go python36Full nodejs ruby octave
+
+    # Documentation
+    manpages
   ];
 
   programs.java.enable = true;
