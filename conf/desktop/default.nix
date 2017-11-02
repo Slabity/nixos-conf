@@ -58,7 +58,7 @@ with builtins; with pkgs.lib; {
             }
         ];
 
-        xrandrHeads = [ "HDMI-1" "HDMI-3" ];
+        xrandrHeads = if (sys.desktop.monitors != null) then sys.desktop.monitors else [];
 
         desktopManager.default = "custom";
     };

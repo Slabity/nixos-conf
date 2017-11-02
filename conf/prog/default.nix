@@ -16,4 +16,5 @@ with builtins; with pkgs.lib; {
   programs.wireshark.enable = true;
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
+  services.emacs.package = expr.emacs;
 }

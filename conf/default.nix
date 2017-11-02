@@ -44,6 +44,7 @@ with builtins; with pkgs.lib; {
         # General utilities
         file bc
 
+        nix-prefetch-git
         nix-repl
     ];
 
