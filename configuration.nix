@@ -18,5 +18,6 @@
     daemonIONiceLevel = 1;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = import ./nixpkgs/config.nix;
+  #nixpkgs.config.allowUnfree = true;
 }

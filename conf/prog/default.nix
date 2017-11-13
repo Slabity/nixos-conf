@@ -5,8 +5,10 @@ with builtins; with pkgs.lib; {
     # Version control
     git mercurial subversion
 
-    # Compilers and interpreters
-    gcc6 go python36Full nodejs ruby octave
+    gcc6
+    nodePackages.tern
+    python3Packages.setuptools
+    python3Full
 
     # Documentation
     manpages
