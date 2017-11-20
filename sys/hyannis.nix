@@ -1,5 +1,5 @@
 rec {
-  hostName = "onyx";
+  hostName = "tslabinski-nixos";
   efiPath = "/boot";
   timeZone = "America/New_York";
 
