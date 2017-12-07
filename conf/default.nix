@@ -42,7 +42,7 @@ with builtins; with pkgs.lib; {
         pstree
 
         # General utilities
-        file bc
+        file bc psmisc
 
         nix-prefetch-git
         nix-repl
