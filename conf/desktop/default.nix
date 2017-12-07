@@ -1,5 +1,8 @@
 { config, pkgs, expr, sys, ... }:
 
+let
+    monitors = if (sys.desktop.monitors != null) then sys.desktop.monitors else [];
+in
 with builtins; with pkgs.lib; {
     imports = [
         ./pulseaudio.nix
@@ -23,7 +26,7 @@ with builtins; with pkgs.lib; {
         libinput.tappingDragLock = false;
 
         # Display Manager
-        displayManager.logToJournal = true;
+        displayManager.job.logToJournal = true;
         displayManager.lightdm.enable = true;
         displayManager.lightdm.autoLogin = {
             enable = true;
@@ -58,8 +61,7 @@ with builtins; with pkgs.lib; {
             }
         ];
 
-        xrandrHeads = if (sys.desktop.monitors != null) then sys.desktop.monitors else [];
-
+        xrandrHeads = monitors;
         desktopManager.default = "custom";
     };
 
