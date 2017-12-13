@@ -19,5 +19,4 @@
   };
 
   nixpkgs.config = import ./nixpkgs/config.nix;
-  #nixpkgs.config.allowUnfree = true;
 }
