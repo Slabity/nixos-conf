@@ -28,15 +28,15 @@ with builtins; with pkgs.lib; {
       ${readFile ./powerlevel9k_init.zsh};
 
       edit() {
-          emacsclient -c -nw $@;
+      emacsclient -c -nw $@;
       }
 
       nsh() {
-          nix-shell --command "exec zsh" $@
+      nix-shell --command "exec zsh" $@
       }
 
       compinit
-      '';
+    '';
   };
 
   environment.systemPackages = with pkgs; [
