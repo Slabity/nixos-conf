@@ -18,7 +18,7 @@ rec {
         output = "HDMI-3";
         primary = false;
         monitorConfig = ''
-          PreferredMode "3440x1440"
+          Option "PreferredMode" "3440x1440"
         '';
       }
     ];
