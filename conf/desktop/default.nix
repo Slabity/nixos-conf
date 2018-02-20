@@ -21,9 +21,13 @@ with builtins; with pkgs.lib; {
 
     # Input
     layout = "us";
-    libinput.enable = true;
-    libinput.tapping = false;
-    libinput.tappingDragLock = false;
+    libinput = {
+        enable = true;
+        accelProfile = "flat";
+        accelSpeed = "-0.60";
+        tapping = false;
+        tappingDragLock = false;
+    };
 
     # Display Manager
     displayManager.job.logToJournal = true;
@@ -67,12 +71,15 @@ with builtins; with pkgs.lib; {
 
   services.compton = {
     enable = true;
-    fade = true;
-    inactiveOpacity = "0.8";
-    shadow = true;
-    fadeDelta = 3;
     backend = "glx";
-    vSync = "drm";
+    vSync = "opengl-mswc";
+    activeOpacity = "0.9";
+    inactiveOpacity = "0.8";
+    menuOpacity = "0.9";
+    shadow = true;
+    fade = true;
+    fadeDelta = 3;
+    opacityRules = [ "100:_NET_WM_NAME@:s *?= 'rofi'"];
   };
 
   services.redshift = {

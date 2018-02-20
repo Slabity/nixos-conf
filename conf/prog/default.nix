@@ -5,7 +5,6 @@ with builtins; with pkgs.lib; {
     # Version control
     git mercurial subversion
 
-    gcc6
     nodePackages.tern
     python3Packages.setuptools
     python3Full

@@ -58,5 +58,6 @@ URxvt.perl-ext-common: default,matcher,font-size,vtwheel,keyboard-select,clipboa
 URxvt.termName: rxvt-unicode-256color
 
 ! rofi config
+rofi.color-enabled: true
 rofi.color-normal:  BG,FG,RED_D,ORANGE_D,FG
 rofi.color-window:  BG,RED_L

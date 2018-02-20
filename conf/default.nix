@@ -50,6 +50,7 @@ with builtins; with pkgs.lib; {
     # General utilities
     file bc psmisc
 
+    nix-index
     nix-prefetch-git
     nix-repl
   ];
