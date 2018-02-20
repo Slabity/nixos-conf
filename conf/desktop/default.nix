@@ -16,6 +16,15 @@ with builtins; with pkgs.lib; {
     beignet         # OpenCL for Intel
   ];
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.extraConfig = ''
+    [Bluetooth Service]
+    Identifier=network
+    Name=PAN Network service
+    Description=Bluetooth PAN Access Point
+    Autostart=true
+  '';
+
   services.xserver = {
     enable = true;
 
@@ -117,4 +126,6 @@ with builtins; with pkgs.lib; {
   };
 
   services.avahi.enable = true;
+
+  services.synergy.server.enable = true;
 }

@@ -56,32 +56,4 @@ with builtins; with pkgs.lib; {
   ];
 
   virtualisation.libvirtd.enable = true;
-
-  containers.hprapp = {
-    privateNetwork = true;
-    hostAddress = "192.168.0.2";
-    localAddress = "192.168.0.3";
-    autoStart = true;
-
-    config = { config, pkgs, ... }:
-    {
-      environment.systemPackages = with pkgs; [
-        git
-        gcc5
-        pkgconfig
-        libxmlxx
-        # Required until #29570
-        glibmm
-        openssl
-        readline
-        boost
-        cmake
-        autoconf
-        gnumake
-
-        # Required if python3 is the default interpretor
-        python2
-      ];
-    };
-  };
 }
