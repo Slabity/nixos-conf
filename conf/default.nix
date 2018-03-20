@@ -10,7 +10,7 @@ with builtins; with pkgs.lib; {
   ];
 
   system.stateVersion = "18.03";
-  system.nixosLabel = sys.hostName;
+  #system.nixosLabel = sys.hostName;
 
   # Locale
   i18n = {
@@ -44,7 +44,6 @@ with builtins; with pkgs.lib; {
 
     # Monitoring
     pciutils usbutils atop
-    linuxPackages.netatop # Extends atop to add networking
     pstree
 
     # General utilities
@@ -56,4 +55,7 @@ with builtins; with pkgs.lib; {
   ];
 
   virtualisation.libvirtd.enable = true;
+
+  services.sshd.enable = true;
+  services.sshd.ports = [ 2222 ];
 }

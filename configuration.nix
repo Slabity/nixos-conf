@@ -14,9 +14,14 @@
 
   nix = {
     autoOptimiseStore = true;
+    buildCores = 4;
     daemonNiceLevel = 1;
     daemonIONiceLevel = 1;
+    gc.automatic = true;
+    gc.dates = "00:00";
+    maxJobs = 4;
+    readOnlyStore = true;
   };
 
-  nixpkgs.config = import ./nixpkgs/config.nix;
+  nixpkgs = import ./nixpkgs;
 }
