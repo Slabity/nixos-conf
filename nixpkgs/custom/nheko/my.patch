@@ -1,0 +1,28 @@
+diff --git a/cmake/LMDBXX.cmake b/cmake/LMDBXX.cmake
+index 502d6b6..7fcdd74 100644
+--- a/cmake/LMDBXX.cmake
++++ b/cmake/LMDBXX.cmake
+@@ -12,8 +12,7 @@ set(LMDBXX_INCLUDE_DIRS ${LMDBXX_ROOT})
+ ExternalProject_Add(
+   lmdbxx
+ 
+-  GIT_REPOSITORY https://github.com/bendiken/lmdbxx
+-  GIT_TAG 0b43ca87d8cfabba392dfe884eb1edb83874de02
++  DOWNLOAD_COMMAND true
+ 
+   BUILD_IN_SOURCE 1
+   SOURCE_DIR ${LMDBXX_ROOT}
+diff --git a/cmake/MatrixStructs.cmake b/cmake/MatrixStructs.cmake
+index 61cf619..37379e1 100644
+--- a/cmake/MatrixStructs.cmake
++++ b/cmake/MatrixStructs.cmake
+@@ -22,8 +22,7 @@ endif()
+ ExternalProject_Add(
+   MatrixStructs
+ 
+-  GIT_REPOSITORY https://github.com/mujx/matrix-structs
+-  GIT_TAG 850100c0ac2b5a04720b2a1f09270749bf99f7dd
++  DOWNLOAD_COMMAND true
+ 
+   BUILD_IN_SOURCE 1
+   SOURCE_DIR ${MATRIX_STRUCTS_ROOT}
