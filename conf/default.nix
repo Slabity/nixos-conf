@@ -55,7 +55,4 @@ with builtins; with pkgs.lib; {
   ];
 
   virtualisation.libvirtd.enable = true;
-
-  services.sshd.enable = true;
-  services.sshd.ports = [ 2222 ];
 }
