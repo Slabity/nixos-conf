@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports = [
     ./sys/hardware-configuration.nix
@@ -11,17 +10,15 @@
   _module.args.sys = import ./sys;
   _module.args.buildVM = false;
 
-
-  nix = {
-    autoOptimiseStore = true;
-    buildCores = 4;
-    daemonNiceLevel = 1;
-    daemonIONiceLevel = 1;
-    gc.automatic = true;
-    gc.dates = "00:00";
-    maxJobs = 4;
-    readOnlyStore = true;
+  nix = import ./nix {
+    sockets = 1;
+    cores = 4;
+    threads = 1;
+    responsive = true;
   };
 
-  nixpkgs = import ./nixpkgs;
+  nixpkgs = import ./nixpkgs {
+    mozilla.enable = true;
+    custom.enable = true;
+  };
 }

@@ -1,4 +1,15 @@
+{ ... }:
+let
+  mozillaOverlayUrl = https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz;
+in
 {
-  config = import ./config.nix;
-  overlays = import ./overlays.nix;
+  config = {
+    allowBroken = false;
+    allowUnfree = true;
+  };
+
+  overlays = [
+    (import (builtins.fetchTarball mozillaOverlayUrl))
+    (import ./custom)
+  ];
 }

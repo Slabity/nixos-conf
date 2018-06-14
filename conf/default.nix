@@ -9,8 +9,8 @@ with builtins; with pkgs.lib; {
     ./prog
   ];
 
-  system.stateVersion = "18.03";
-  #system.nixosLabel = sys.hostName;
+  system.nixos.stateVersion = "18.03";
+  system.nixos.label = "test";
 
   # Locale
   i18n = {

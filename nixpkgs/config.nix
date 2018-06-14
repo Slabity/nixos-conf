@@ -1,4 +1,0 @@
-{
-  allowBroken = false;
-  allowUnfree = true;
-}
