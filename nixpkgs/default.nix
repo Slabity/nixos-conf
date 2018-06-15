@@ -1,15 +1,6 @@
-{ ... }:
-let
-  mozillaOverlayUrl = https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz;
-in
 {
-  config = {
-    allowBroken = false;
-    allowUnfree = true;
-  };
-
-  overlays = [
-    (import (builtins.fetchTarball mozillaOverlayUrl))
-    (import ./custom)
-  ];
+  # This folder is symlinked to `$HOME/.config/nixpkgs` and needs to have these
+  # files separate from this `default.nix` file to work appropriately.
+  config = import ./config.nix;
+  overlays = import ./overlays.nix;
 }

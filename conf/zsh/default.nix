@@ -22,7 +22,7 @@ with builtins; with pkgs.lib; {
         "vi-mode"
         "wd"
       ];
-      theme = "../../../../../..${expr.powerlevel9k}/powerlevel9k/powerlevel9k";
+      theme = "../../../../../..${pkgs.powerlevel9k}/powerlevel9k/powerlevel9k";
     };
     interactiveShellInit = ''
       ${readFile ./powerlevel9k_init.zsh};

@@ -6,7 +6,6 @@
     ./conf
   ];
 
-  _module.args.expr = import ./expr { inherit pkgs; };
   _module.args.sys = import ./sys;
   _module.args.buildVM = false;
 
@@ -17,8 +16,5 @@
     responsive = true;
   };
 
-  nixpkgs = import ./nixpkgs {
-    mozilla.enable = true;
-    custom.enable = true;
-  };
+  nixpkgs = import ./nixpkgs;
 }
