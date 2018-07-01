@@ -1,20 +1,37 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 {
   imports = [
-    ./sys/hardware-configuration.nix
-    ./sys/accounts.nix
-    ./conf
+    ./modules
+    ./hardware-configuration.nix
   ];
 
-  _module.args.sys = import ./sys;
-  _module.args.buildVM = false;
+  foxos.system.name = "raichu";
 
-  nix = import ./nix {
+  foxos.hardware.efi = true;
+
+  foxos.hardware.cpu = {
+    type = "intel";
     sockets = 1;
     cores = 4;
     threads = 1;
-    responsive = true;
   };
 
-  nixpkgs = import ./nixpkgs;
+  foxos.hardware.gpu.enable = true;
+  foxos.hardware.gpu.type.intel = true;
+  foxos.hardware.gpu.type.amd = false;
+
+  foxos.hardware.ethernet.enable = true;
+  foxos.hardware.wifi.enable = true;
+  foxos.hardware.bluetooth.enable = true;
+  foxos.hardware.audio.enable = true;
+  foxos.hardware.input.enable = true;
+  foxos.hardware.battery.enable = true;
+
+  foxos.profiles.workstation.enable = true;
+
+  foxos.mainUser.enable = true;
+  foxos.mainUser.name = "slabity";
+
+  boot.loader.grub.enableCryptodisk = true;
+  time.timeZone = "America/New_York";
 }
