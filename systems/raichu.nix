@@ -1,8 +1,8 @@
 { config, ... }:
 {
   imports = [
-    ./modules
-    ./hardware-configuration.nix
+    ../modules
+    ../hardware-configuration.nix
   ];
 
   foxos.system.name = "raichu";
