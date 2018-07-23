@@ -4,7 +4,5 @@
     ./workstation
   ];
 
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
+  nixpkgs = import ../../nixpkgs;
 }

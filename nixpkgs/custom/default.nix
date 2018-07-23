@@ -8,4 +8,12 @@ self: super:
   };
 
   nheko = super.libsForQt5.callPackage ./nheko { };
+
+  #rustCustom = super.latest.rustChannels.nightly.rust.overrideAttrs (old: rec {
+  #  name = "rustCustom";
+  #});
+
+  rustCustom = super.rust.overrideAttrs (old: rec {
+    name = "rustCustom";
+  });
 }
