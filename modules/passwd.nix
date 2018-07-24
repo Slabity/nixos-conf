@@ -3,8 +3,14 @@ with lib;
 let
   cfg = config.foxos;
   userCfg = cfg.mainUser;
+
+  homeMgrPkg = fetchTarball "https://github.com/rycee/home-manager/archive/master.tar.gz";
 in
 {
+  imports = [
+    "${homeMgrPkg}/nixos"
+  ];
+
   options.foxos.mainUser = {
     enable = mkEnableOption "Main (non-root) user";
     name = mkOption {
