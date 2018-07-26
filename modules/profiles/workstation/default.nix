@@ -12,6 +12,8 @@ in
     foxos.i3.enable = true;
     foxos.emacs.enable = true;
 
+    virtualisation.libvirtd.enable = true;
+
     services.dbus.socketActivated = true;
     services.avahi.enable = true;
     services.mpd.enable = true;
