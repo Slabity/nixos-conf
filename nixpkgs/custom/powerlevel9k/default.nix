@@ -3,10 +3,10 @@
 stdenv.mkDerivation {
   name = "powerlevel9k";
   src = fetchFromGitHub {
-    owner = "bhilburn";
+    owner = "dritter";
     repo = "powerlevel9k";
-    rev = "master";
-    sha256 = "1iv0sdw6x0ji87gxi92a3x2y9lsgqnn1gys7nmqhs35mg1sw66w4";
+    rev = "prepare_066";
+    sha256 = "11prlvygmz3p4g6wsyxy1zziyrmm6wham7qznfncy4yzg6jwfcp0";
   };
 
   installPhase = ''
