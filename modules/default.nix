@@ -15,7 +15,6 @@
   environment.systemPackages = with pkgs; [
     nix-index
     nix-prefetch-git
-    nix-repl
 
     unzip zip unrar
 
