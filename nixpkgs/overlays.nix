@@ -1,5 +1,5 @@
 let
-  mozillaOverlayUrl = https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz;
+  mozillaOverlayUrl = https://github.com/Slabity/nixpkgs-mozilla/archive/master.tar.gz;
 in
 [
   (import (builtins.fetchTarball mozillaOverlayUrl))

@@ -58,6 +58,7 @@ in
     services.tlp.enable = hwCfg.battery.enable;
 
     hardware.opengl = mkIf hwCfg.gpu.enable {
+      enable = true;
       driSupport = true;
       driSupport32Bit = hwCfg.cpu.support32Bit;
 
@@ -68,11 +69,10 @@ in
         pkgs.intel-ocl
       ];
 
-      extraPackages32 = mkIf (hwCfg.gpu.type.intel && hwCfg.cpu.support32Bit) [
+      extraPackages32 = mkIf hwCfg.cpu.support32Bit [
         pkgs.pkgsi686Linux.vaapiIntel      # Video Accel API by Intel
         pkgs.pkgsi686Linux.libvdpau-va-gl  # VDPAU driver using VAAPI
         pkgs.pkgsi686Linux.vaapiVdpau
-        pkgs.pkgsi686Linux.intel-ocl
       ];
     };
 

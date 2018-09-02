@@ -57,8 +57,8 @@ in
 
     services.compton = {
       enable = true;
-      backend = "glx";
-      vSync = "opengl-mswc";
+      backend = "xr_glx_hybrid";
+      vSync = "drm";
       activeOpacity = "0.9";
       inactiveOpacity = "0.8";
       menuOpacity = "0.9";

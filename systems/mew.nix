@@ -14,6 +14,7 @@
     sockets = 1;
     cores = 4;
     threads = 2;
+    support32Bit = true;
   };
 
   foxos.hardware.gpu.enable = true;
@@ -34,4 +35,20 @@
 
   boot.loader.grub.enableCryptodisk = true;
   time.timeZone = "America/New_York";
+  virtualisation.libvirtd.enable = true;
+
+  services.xserver.xrandrHeads = [
+    {
+      output = "HDMI-A-0";
+      primary = true;
+    }
+    {
+      output = "DVI-D-0";
+      primary = false;
+      monitorConfig = ''
+        Option "PreferredMode" "2560x1440"
+      '';
+    }
+  ];
+
 }

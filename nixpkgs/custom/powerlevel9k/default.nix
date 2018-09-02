@@ -6,7 +6,7 @@ stdenv.mkDerivation {
     owner = "dritter";
     repo = "powerlevel9k";
     rev = "prepare_066";
-    sha256 = "11prlvygmz3p4g6wsyxy1zziyrmm6wham7qznfncy4yzg6jwfcp0";
+    sha256 = "0glhzcvbl02ahblphxg6f5lpz1lf0nvy22zakk6jhgwwgh8f3vhl";
   };
 
   installPhase = ''
