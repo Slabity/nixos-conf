@@ -11,7 +11,6 @@ in
     programs.zsh = {
       enable = true;
       enableCompletion = true;
-      autosuggestions.enable = true;
       ohMyZsh = {
         enable = true;
         plugins = [

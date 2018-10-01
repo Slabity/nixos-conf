@@ -33,7 +33,7 @@ in
       windowManager.i3.configFile = "${./i3conf}";
       windowManager.default = "i3";
 
-      videoDrivers = [ "amdgpu" "modesetting" ];
+      videoDrivers = [ "amdgpu-pro" "modesetting" ];
       useGlamor = true;
 
       desktopManager.session = [

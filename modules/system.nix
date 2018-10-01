@@ -21,7 +21,7 @@ in
 
   config = {
     system.nixos.label = if sysCfg.name == null then "" else sysCfg.name;
-    system.nixos.stateVersion = sysCfg.version;
+    system.stateVersion = sysCfg.version;
 
     assertions = [
       (foxlib.reqVar "foxos.system.name" sysCfg.name)

@@ -63,6 +63,7 @@ in
       driSupport32Bit = hwCfg.cpu.support32Bit;
 
       extraPackages = mkIf hwCfg.gpu.type.intel [
+        pkgs.libGL
         pkgs.vaapiIntel      # Video Accel API by Intel
         pkgs.libvdpau-va-gl  # VDPAU driver using VAAPI
         pkgs.vaapiVdpau
@@ -70,6 +71,7 @@ in
       ];
 
       extraPackages32 = mkIf hwCfg.cpu.support32Bit [
+        pkgs.pkgsi686Linux.libGL
         pkgs.pkgsi686Linux.vaapiIntel      # Video Accel API by Intel
         pkgs.pkgsi686Linux.libvdpau-va-gl  # VDPAU driver using VAAPI
         pkgs.pkgsi686Linux.vaapiVdpau
