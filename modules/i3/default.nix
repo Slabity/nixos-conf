@@ -57,7 +57,7 @@ in
 
     services.compton = {
       enable = true;
-      backend = "xr_glx_hybrid";
+      backend = "xrender";
       vSync = "drm";
       activeOpacity = "0.9";
       inactiveOpacity = "0.8";
